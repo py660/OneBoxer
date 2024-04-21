@@ -1747,24 +1747,24 @@
 
 <head>
   <meta property="title" content="<%= title %>" />
-  <meta property="url" content="https://oneboxer.repl.co" />
+  <meta property="url" content="https://oneboxer.vercel.app" />
   <meta property="description" content="<%= description %>" />
   <meta property="site_name" content="<%= siteName %>" />
   <meta property="og:site_name" content="<%= siteName %>" />
   <meta property="og:title" content="<%= title %>" />
   <meta property="og:type" content="image" />
-  <meta property="og:url" content="https://oneboxer.repl.co" />
+  <meta property="og:url" content="https://oneboxer.vercel.app" />
   <meta property="og:description" content="<%= description %>" />
 </head>
 
 <aside
   class="onebox allowlistedgeneric"
-  data-onebox-src="https://oneboxer.repl.co"
+  data-onebox-src="https://oneboxer.vercel.app"
 >
   <header class="source">
     <a
       id="siteNameField"
-      href="https://oneboxer.repl.co"
+      href="https://oneboxer.vercel.app"
       target="_blank"
       rel="noopener nofollow ugc"
       ><%= siteName %></a
@@ -1779,7 +1779,7 @@
     <h3>
       <a
         id="titleField"
-        href="https://oneboxer.repl.co"
+        href="https://oneboxer.vercel.app"
         target="_blank"
         rel="noopener nofollow ugc"
         ><%= title %></a
@@ -1820,7 +1820,7 @@
   <input class="btn btn-primary" type="submit" value="Generate" />
   <div class="nav-alert" id="nav-alert">
     <% if (siteName !== "Oneboxer by Haroon" && title !== "Oneboxer" && description !== "Create simple Discourse oneboxes (and Discord embeds) with this tool!") { %>
-      https://oneboxer.repl.co<%= req.url %>
+      https://oneboxer.vercel.app<%= req.url %>
     <% } else { %>
     Your generated URL will display here...
     <% } %>
@@ -1837,7 +1837,7 @@
   document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
-    let url = new URL("/", "https://oneboxer.repl.co");
+    let url = new URL("/", "https://oneboxer.vercel.app");
 
     try {
       Array.from(e.target.children).forEach((child, i) => {
