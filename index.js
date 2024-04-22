@@ -63,7 +63,7 @@ app.get('/', (req, res) => {
     siteName: req.query.siteName?.split('+').join(' ') || "Oneboxer by Haroon",
     title: req.query.title?.split('+').join(' ') || "Oneboxer",
     description: req.query.description?.split('+').join(' ') || "Create simple Discourse oneboxes (and Discord embeds) with this tool!",
-    redirect: req.query.redirect ? `<meta http-equiv="refresh" content="0; ${decodeURIComponent(req.query.redirect)}">` : '',
+    redirect: (req.query.redirect && !req.query.ignoreRedirect) ? `<meta http-equiv="refresh" content="0; ${decodeURIComponent(req.query.redirect)}">` : '',
     image: undefined
   })
 });
