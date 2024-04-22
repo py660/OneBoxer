@@ -41,7 +41,7 @@ app.use((req, res, next) => {
 
   console.log(ip, req.url)
 
-  if (["184.105.99.36"].includes(ip) && decodeURIComponent(req.url).toLowerCase().split('').map(letter => {
+  /*if (["184.105.99.36"].includes(ip) && decodeURIComponent(req.url).toLowerCase().split('').map(letter => {
     return Object.keys(glyphs).find(glyph => glyphs[glyph].includes(letter)) || letter
   }).join('').includes("python")) {
     return res.render('index', {
@@ -51,17 +51,19 @@ app.use((req, res, next) => {
       description: "than your weird language",
       image: undefined
     })
-  } else {
+  } else {*/
     next();
-  }
+  /*}*/
 })
 
 app.get('/', (req, res) => {
+    console.log(req.query.redirect);
   res.render('index', {
     req,
     siteName: req.query.siteName?.split('+').join(' ') || "Oneboxer by Haroon",
     title: req.query.title?.split('+').join(' ') || "Oneboxer",
     description: req.query.description?.split('+').join(' ') || "Create simple Discourse oneboxes (and Discord embeds) with this tool!",
+    redirect: req.query.redirect ? `<meta http-equiv="refresh" content="0; ${decodeURIComponent(req.query.redirect)}">` : '',
     image: undefined
   })
 });
