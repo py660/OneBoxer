@@ -2,7 +2,8 @@ const express = require('express');
 
 const app = express();
 
-app.set('view engine', 'ejs')
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
 
 const glyphs = {
   a: "aå@аàáạąἀἁἂἃἄἅἆἇὰάᾀᾁᾂᾃᾄᾅᾆᾇɑα⍺𝐚𝑎𝒂𝒶𝓪𝔞𝕒𝖆𝖺𝗮𝘢𝙖𝚊𝛂𝛼𝜶𝝰𝞪ａA@4ἈἉἊἋἌἍἎἏÁ",
